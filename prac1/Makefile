@@ -12,3 +12,6 @@ all : $(ALL)
 
 hello :hello.o
 	$(CC) -o $@ $< $(LDFLAGS)
+
+clean :
+	rm -rf *.o $(ALL)
