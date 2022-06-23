@@ -27,7 +27,13 @@ all : $(ALL)
 
 # make hello는 hello.o에 종속성이 있다.
 # gcc -o hello.o hello
-hello :hello.o
+hello : hello.o
+	$(CC) -o $@ $< $(LDFLAGS)
+
+output : output.o
+	$(CC) -o $@ $< $(LDFLAGS)
+
+input : input.o
 	$(CC) -o $@ $< $(LDFLAGS)
 
 # .o file과 실행파일을 모두 삭제함.
