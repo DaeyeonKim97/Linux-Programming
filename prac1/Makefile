@@ -36,6 +36,14 @@ output : output.o
 input : input.o
 	$(CC) -o $@ $< $(LDFLAGS)
 
+args : args.o
+	$(CC) -o $@ $< $(LDFLAGS)
+
+string : strings.o
+	$(CC) -o $@ $< $(LDFLAGS)
+	
+
+
 # .o file과 실행파일을 모두 삭제함.
 clean :
 	rm -rf *.o $(ALL)
