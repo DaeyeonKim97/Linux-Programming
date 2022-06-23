@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main()
+int main()
 {
 	char c, s[80];
 	int i; long l;
