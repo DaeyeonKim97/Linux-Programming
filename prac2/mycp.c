@@ -29,7 +29,7 @@ main(int argc, char *argv[])
 
 
 
-    /* 파일을 버퍼단위로 read하여 fd2로 write */
+    /* fd1으로 식별된 파일을 buf에 읽어와서 fd2로 식별된 파일에 write */
 
 	while ((count = read(fd1, buf, MAX_BUF)) > 0){ //EOF까지 open한 fd1을 buf에다가 최대 MAX_BUF만큼 입력받음 
 			write(fd2,buf, count);  //fd2에 buf의 count만큼 write
