@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
 
@@ -10,7 +11,7 @@ main()
 	if((fd = creat("file.hole",0400))<0)
 	{
 		perror ("creat");
-		exit (1);	
+		exit(1);	
 	} //file.hole를 사용자에게 읽기권한을 부여하여 만들고 실패할경우 stderr creat출력	
 
 	if(lseek(fd, 1023, SEEK_SET) < 0) { //fd의 시작부터 1023만큼 이동
