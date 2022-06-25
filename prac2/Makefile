@@ -46,4 +46,4 @@ tab: tab.o
 upper: upper.o
 	$(CC) -o $@ $< $(LDFLAGS)
 clean :
-	rm -rf *.o $(ALL) file.hole
+	rm -rf *.o *.t *.bak $(ALL) file.hole
