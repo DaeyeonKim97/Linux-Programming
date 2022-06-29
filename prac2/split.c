@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 #define MAX_BUF 1024
@@ -40,7 +41,7 @@ int main(int argc, char *argv[]){
 	}
 
     //Main Function: Split src file to dst1, dst2
-    size = filesize(src) / 2;
+    size = fileSize(src) / 2;
     while(size>0){
         count = size > MAX_BUF ? MAX_BUF : size; // count는 MAX_BUF와 size중에서 작은 값
         fread(buf, 1, count, src); // 1byte단위로 src에서 buf에 count 개수만큼 읽어옴
@@ -48,7 +49,7 @@ int main(int argc, char *argv[]){
         size -= count; // 처리한 양만큼 size에서 빼줌
     }
 
-    while((count = fread(buf,1,MAX_BUF,src)>0)){
+    while((count = fread(buf,1,MAX_BUF,src))>0){
         fwrite(buf, 1, count, dst2);
     } //src에 남은 내용들을 읽어와서 dst2에 write
 
